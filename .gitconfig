@@ -1,0 +1,46 @@
+[user]
+    name = hikaru
+    email = iidhkr@gmail.com
+
+[push]
+    default = matching
+
+[color]
+    branch = auto
+    diff = always
+    branch = auto
+    diff = always
+    interactive = auto
+    status = auto
+    pager = false
+    ui = auto
+    ui = true
+
+[diff]
+    tool = vimdiff
+
+[core]
+    pager = less -q -R
+    editor = vim
+	excludesfile = /Users/idahikaru/.gitignore
+
+[merge]
+    tool = vimdiff
+
+[alias]
+    co = checkout
+    br = branch
+    st = status
+    ci = commit
+    df = diff
+    graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
+
+
+[help]
+    autocorrect = 1
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
