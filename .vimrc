@@ -458,3 +458,5 @@ aug RailsDictSetting
   au!
 aug END
 "}}}
+
+imap <C-j> <Esc>
