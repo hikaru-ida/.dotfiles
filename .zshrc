@@ -332,6 +332,12 @@ if zsh_startup; then
     export RBENV_ROOT="${HOME}/.rbenv"
     path=(${RBENV_ROOT}/bin(N-/^W) ${path})
 
+    # setup go
+    if [ -x "`which go`" ]; then
+          export GOPATH=$HOME/go
+          export PATH=$PATH:$GOROOT/bin
+    fi
+
     ## setopt
     # % Unknown command treat as arguments of cd
     setopt auto_cd
