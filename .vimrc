@@ -109,6 +109,11 @@ if s:plug.ready()
 
     " quickrun
     Plug 'thinca/vim-quickrun'
+
+    " golang
+    Plug 'fatih/vim-go'
+    Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
     augroup load_us_ycm
         autocmd!
         autocmd InsertEnter * call plug#load('vim-smartchr', s:comp)
@@ -339,6 +344,10 @@ if s:plug.is_installed("vim-colors-solarized")
     colorscheme solarized
 endif
 
+" set go
+ set rtp+=$GOROOT/misc/vim
+ exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+ set completeopt=menu,preview
 " search settings
 " don't care about uppercase or lowercase
 set ignorecase
