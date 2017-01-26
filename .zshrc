@@ -335,7 +335,7 @@ if zsh_startup; then
     # setup go
     if [ -x "`which go`" ]; then
           export GOPATH=$HOME/go
-          export PATH=$PATH:$GOROOT/bin
+          export PATH=$PATH:$GOPATH/bin
     fi
 
     ## setopt
