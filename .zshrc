@@ -338,6 +338,19 @@ if zsh_startup; then
           export PATH=$PATH:$GOPATH/bin
     fi
 
+    # setup peco
+    bindkey '^]' peco-src
+
+    function peco-src() {
+        local src=$(ghq list --full-path | peco --query "$LBUFFER")
+        if [ -n "$src" ]; then
+            BUFFER="cd $src"
+            zle accept-line
+        fi
+        zle -R -c
+    }
+    zle -N peco-src
+
     ## setopt
     # % Unknown command treat as arguments of cd
     setopt auto_cd

@@ -338,16 +338,37 @@ if s:plug.is_installed("syntastic")
   let g:syntastic_c_check_header = 1
   " C++
   let g:syntastic_cpp_check_header = 1
+  "let g:syntastic_debug=1
+  let g:syntastic_cpp_compiler = 'g++'
+  let g:syntastic_cpp_compiler_options = ' -std=c++11'
 endif
 if s:plug.is_installed("vim-colors-solarized")
     " set colorscheme solarized
     colorscheme solarized
 endif
 
+"if s:plug.is_installed("gocode")
 " set go
  set rtp+=$GOROOT/misc/vim
  exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
  set completeopt=menu,preview
+
+ let g:go_bin_path = expand("~/.go/bin")
+
+ let g:go_highlight_functions = 1
+ let g:go_highlight_methods = 1
+ let g:go_highlight_fields = 1
+ let g:go_highlight_types = 1
+ let g:go_highlight_operators = 1
+ let g:go_highlight_build_constraints = 1
+ let g:go_term_mode = "tab"
+ au FileType go nmap <leader>rt <Plug>(go-run-tab)
+ au FileType go nmap <Leader>rs <Plug>(go-run-split)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)Leader>rv <Plug>(go-run-vertical)
+"endif
+
 " search settings
 " don't care about uppercase or lowercase
 set ignorecase
