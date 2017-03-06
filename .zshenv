@@ -49,6 +49,7 @@ export KEYTIMEOUT=0
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 # C++ Compiler
-export CXX=g++ -std=c++11
-export CC=gcc
+export CXX=g++
+#export CC=gcc
+export CC=clang
 alias g++="g++ -std=c++11"
