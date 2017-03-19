@@ -454,6 +454,17 @@ set t_Co=256
 " eliminating delays on ESC
 set timeoutlen=1000 ttimeoutlen=0
 
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
+
+" hightlight last inserted text
+nnoremap gV `[v`]
+
 "Rails
  "------------------------------------
 " vim-rails
