@@ -207,16 +207,16 @@ if zsh_startup; then
     alias free="free -h"
 
     # python
-    function py() {
-        test -z "$1" && ipython --no-confirm-exit || command python "$@"
+    #function py() {
+        #test -z "$1" && ipython --no-confirm-exit || command python "$@"
         #ipython -h >/dev/null 2>&1
         #if [[ $# -eq 0 && $? -eq 0 ]]; then
         #    command ipython
         #else
         #    command python "$@"
         #fi
-    }
-    alias python="py"
+    #}
+    #alias python="py"
 
     # git
     alias gst="git status"

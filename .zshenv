@@ -52,4 +52,4 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export CXX=g++
 #export CC=gcc
 export CC=clang
-alias g++="g++ -std=c++11"
+#alias g++="g++ -std=c++11"
