@@ -218,6 +218,10 @@ if zsh_startup; then
     #}
     #alias python="py"
 
+    # pbcopy
+    #alias pbcopy='xsel --clipboard --input'
+    alias pbcopy="xclip -sel clip"
+
     # git
     alias gst="git status"
     alias gsth="git stash"
@@ -424,3 +428,5 @@ if zsh_startup; then
     # Enable history system like a Bash
     setopt bang_hist
 fi
+DISPLAY=:0
+setopt nonomatch

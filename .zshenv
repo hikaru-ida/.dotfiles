@@ -9,6 +9,7 @@ export PATH="/usr/local/bin:${PATH}"
 export PATH="/usr/local/sbin:${PATH}"
 export PATH="${HOME}/.dotfiles/bin:${PATH}"
 
+
 # Editor
 export EDITOR=vim
 export CVSEDITOR="${EDITOR}"
@@ -50,6 +51,30 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 # C++ Compiler
 export CXX=g++
-#export CC=gcc
-export CC=clang
-#alias g++="g++ -std=c++11"
+export CC=gcc
+#export CC=clang
+#export CXX=clang++
+alias g++="g++ -std=c++11"
+
+# CUDA and cuDNN paths
+export CUDA_PATH=/usr/local/cuda-8.0
+export PATH=${CUDA_PATH}/bin:${PATH}
+export LD_LIBRARY_PATH=${CUDA_PATH}/lib64:${LD_LIBRARY_PATH}
+
+export CPATH=$CUDA_PATH/include:$CPATH
+export LIBRARY_PATH=$CUDA_PATH/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$CUDA_CUDA_PATH/lib64:$LD_LIBRARY_PATH
+
+
+# stanford core nlp
+export CLASSPATH=/usr/local/lib/stanford-corenlp-full-2016-10-31/stanford-corenlp-3.7.0.jar
+
+# dynet関係のC++のインクルードパス
+#export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/include/eigen
+export CPATH=/usr/include/eigen:${CPATH}
+export CPATH=${HOME}/lib/dynet:${CPATH}
+export LD_LIBRARY_PATH=${HOME}/lib/dynet/build/dynet:${LD_LIBRARY_PATH}
+export DYNET_LIB=${HOME}/lib/dynet/build/dynet
+
+# rust path
+export PATH="${HOME}/.cargo/bin:${PATH}"
