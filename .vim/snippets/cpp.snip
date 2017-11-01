@@ -1,0 +1,27 @@
+include cpp/*
+
+snippet snippdy
+  dy[] = {-1, -1, -1, 0, 1, 1, 1, 0 };
+  dx[] = {-1, 0, 1, 1, 1, 0, -1, -1 };
+
+snippet vector2d
+  vector< vector<${1:int}> > ${2:v}(${3}, vector<$1>(${4}));
+
+snippet priority_queue_max
+    priority_queue<${1:int}> ${2:maxpq};
+
+snippet priority_queue_min
+    priority_queue<${1:int}, vector<$1>,  greater<$1> > ${2:minpq};
+snippet priority_queue_pair
+    priority_queue< pair<${1:int}, $1>, vector<pair<$1, $1> >,  greater<pair<int, int> > > pq;
+
+snippet init_code
+    #include <bits/stdc++.h>
+    using namespace std;
+    typedef long long ll;
+
+    int main() {
+      cin.tie(0);
+      ios::sync_with_stdio(false);
+    }
+
