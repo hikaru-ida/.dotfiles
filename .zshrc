@@ -335,6 +335,7 @@ if zsh_startup; then
     # setup rbenv
     export RBENV_ROOT="${HOME}/.rbenv"
     path=(${RBENV_ROOT}/bin(N-/^W) ${path})
+    eval "$(rbenv init -)"
 
     # setup go
     if [ -x "`which go`" ]; then
