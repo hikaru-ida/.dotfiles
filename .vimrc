@@ -119,8 +119,11 @@ if s:plug.ready()
     Plug 'Shougo/neosnippet.vim'
     Plug 'Shougo/neosnippet-snippets'
 
-    " () 
-    " Plug 'cohama/lexima.vim'
+
+    " rust
+    Plug 'racer-rust/vim-racer'
+    Plug 'rust-lang/rust.vim'
+    Plug 'scrooloose/syntastic'
 
     augroup load_us_ycm
         autocmd!
@@ -368,6 +371,19 @@ if s:plug.is_installed("molokai")
     "colorscheme molokai
 endif
 
+if s:plug.is_installed("racer-ruts/vim-racer")
+    let g:racer_cmd = "$HOME/.cargo/bin/racer"
+endif
+
+if s:plug.is_installed("rust-lang/rust.vim")
+    let g:rustfmt_autosave = 1
+    let g:rustfmt_command = "$HOME/.cargo/bin/rustfmt"
+endif
+
+if s:plug.is_installed("scrooloose/syntastic")
+    let g:syntastic_mode_map = { 'mode': 'passive',  'active_filetypes': ['rust'] }
+    let g:syntastic_rust_checkers = ['rustc',  'cargo']
+endif
 
 "if s:plug.is_installed("gocode")
 " set go
